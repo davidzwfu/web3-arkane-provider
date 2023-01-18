@@ -2,26 +2,41 @@ import {AuthenticationOptions, AuthenticationResult, VenlyConnect} from '@venly/
 import {VenlyWalletSubProvider} from './VenlyWalletSubProvider';
 import {Account} from '@venly/connect/dist/src/models/Account';
 import {NonceTrackerSubprovider} from './NonceTracker';
-import {Provider} from 'ethereum-types';
+// import {Provider} from 'ethereum-types';
 import {SignedVersionedTypedDataSubProvider} from './SignedVersionedTypedDataSubProvider';
 import {RequestAccountsSubProvider} from './RequestAccountsSubProvider';
 import {SecretType} from '@venly/connect';
 import {SignTransactionGasFix} from './SignTransactionGasFix';
 
-const ProviderEngine = require('@arkane-network/web3-provider-engine');
-const CacheSubprovider = require('@arkane-network/web3-provider-engine/subproviders/cache');
-const FixtureSubprovider = require('@arkane-network/web3-provider-engine/subproviders/fixture');
-const FilterSubprovider = require('@arkane-network/web3-provider-engine/subproviders/filters');
-const RpcSubprovider = require('@arkane-network/web3-provider-engine/subproviders/rpc');
-const SubscriptionsSubprovider = require('@arkane-network/web3-provider-engine/subproviders/subscriptions');
-const SanitizingSubprovider = require('@arkane-network/web3-provider-engine/subproviders/sanitizer');
-const InflightCacheSubprovider = require('@arkane-network/web3-provider-engine/subproviders/inflight-cache');
-const WebsocketSubprovider = require('@arkane-network/web3-provider-engine/subproviders/websocket');
+// import * as Web3ProviderEngine  from 'web3-provider-engine';
+// import * as RpcSource  from 'web3-provider-engine/subproviders/rpc';
+// import * as HookedWalletSubprovider from 'web3-provider-engine/subproviders/hooked-wallet';
+
+// import {
+//   default as ProviderEngine,
+//   BlockCacheSubprovider,
+//   FixtureSubprovider,
+//   FilterSubprovider,
+//   FetchSubprovider,
+//   //RpcSubprovider,
+//   SubscriptionsSubprovider,
+//   SanitizerSubprovider,
+//   InflightCacheSubprovider,
+// } from '@bitski/provider-engine';
+
+const ProviderEngine = require('web3-provider-engine')
+const CacheSubprovider = require('web3-provider-engine/subproviders/cache.js')
+const FixtureSubprovider = require('web3-provider-engine/subproviders/fixture.js')
+const FilterSubprovider = require('web3-provider-engine/subproviders/filters.js')
+const VmSubprovider = require('web3-provider-engine/subproviders/vm.js')
+const HookedWalletSubprovider = require('web3-provider-engine/subproviders/hooked-wallet.js')
+const NonceSubprovider = require('web3-provider-engine/subproviders/nonce-tracker.js')
+const RpcSubprovider = require('web3-provider-engine/subproviders/rpc.js')
 
 export class VenlySubProvider {
 
   private venlyConnect?: VenlyConnect;
-  private rpcSubProvider: any;
+  // private rpcSubProvider: any;
   private nonceSubProvider: any;
   private signedVersionedTypedDataSubProvider: any;
   private requestAccountsSubProvider: any;
@@ -32,7 +47,7 @@ export class VenlySubProvider {
     return this.venlyConnect;
   }
 
-  public async changeSecretType(secretType: SecretType = SecretType.ETHEREUM): Promise<Provider | undefined> {
+  public async changeSecretType(secretType: SecretType = SecretType.ETHEREUM): Promise<any> {
     if (this.subProvider && this.subProvider.options) {
       this.subProvider.options.secretType = secretType;
       this.subProvider.lastWalletsFetch = undefined;
@@ -59,7 +74,7 @@ export class VenlySubProvider {
     return this.subProvider.startGetAccountFlow(authenticationOptions);
   }
 
-  public createProviderEngine(options: VenlySubProviderOptions): Promise<Provider> {
+  public createProviderEngine(options: VenlySubProviderOptions): Promise<any> {
     let connectionDetails = this.getConnectionDetails(options);
     this.engine = new ProviderEngine({pollingInterval: options.pollingInterval || 15000});
     this.engine.addProvider(new FixtureSubprovider({
@@ -87,25 +102,27 @@ export class VenlySubProvider {
     }
     this.engine.addProvider(this.requestAccountsSubProvider);
 
-
-    this.engine.addProvider(new FilterSubprovider());
-
     this.nonceSubProvider = new NonceTrackerSubprovider({rpcUrl: connectionDetails.endpointHttpUrl});
     this.engine.addProvider(this.nonceSubProvider);
 
-
-    this.engine.addProvider(new SanitizingSubprovider());
-
-    this.engine.addProvider(new SubscriptionsSubprovider());
-
     this.engine.addProvider(new CacheSubprovider());
+    this.engine.addProvider(new FilterSubprovider());
+    this.engine.addProvider(new NonceSubprovider());
+    this.engine.addProvider(new VmSubprovider());
 
-    this.engine.addProvider(new InflightCacheSubprovider());
+    // id mgmt
+    // this.engine.addProvider(new HookedWalletSubprovider({
+    //   getAccounts: function(cb){ ... },
+    //   approveTransaction: function(cb){ ... },
+    //   signTransaction: function(cb){ ... },
+    // }));
 
+    // data source
+    this.engine.addProvider(new RpcSubprovider({
+      rpcUrl: connectionDetails.endpointHttpUrl,
+    }));
 
-    this.rpcSubProvider = new RpcSubprovider({rpcUrl: connectionDetails.endpointHttpUrl});
     this.engine.addProvider(this.subProvider);
-    this.engine.addProvider(this.rpcSubProvider);
 
     return options.skipAuthentication
       ? Promise.resolve(this.startEngine(this.engine))
@@ -160,3 +177,5 @@ export interface VenlySubProviderOptions {
 if (typeof window !== 'undefined') {
   (window as any).Venly = new VenlySubProvider();
 }
+
+export const Venly = VenlySubProvider.prototype;

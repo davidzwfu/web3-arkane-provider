@@ -1,7 +1,11 @@
 const Transaction = require('ethereumjs-tx')
 const ethUtil = require('ethereumjs-util')
-const Subprovider = require('@arkane-network/web3-provider-engine/subproviders/subprovider')
-const blockTagForPayload = require('@arkane-network/web3-provider-engine/util/rpc-cache-utils').blockTagForPayload
+// const Subprovider = require('@arkane-network/web3-provider-engine/subproviders/subprovider')
+// const blockTagForPayload = require('@arkane-network/web3-provider-engine/util/rpc-cache-utils').blockTagForPayload
+const Subprovider = require('web3-provider-engine/subproviders/subprovider.js')
+const blockTagForPayload = require('web3-provider-engine/util/rpc-cache-utils').blockTagForPayload
+//import { Subprovider } from 'web3-provider-engine';
+//import { blockTagForPayload } from '@bitski/provider-engine/src/util/rpc-cache-utils';
 
 export class NonceTrackerSubprovider extends Subprovider {
 

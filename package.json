@@ -6,7 +6,7 @@
   "types": "dist/src/index.d.ts",
   "unpkg": "dist/web3-provider.js",
   "scripts": {
-    "clean": "rm -rf dist",
+    "clean": "del /S dist\\*",
     "build-ts": "npx tsc -p .",
     "build": "npm run clean && npm run build-js",
     "build-js": "npx webpack --mode production",
@@ -38,21 +38,18 @@
   },
   "homepage": "https://venly.io",
   "dependencies": {
-    "@0x/assert": "^3.0.34",
-    "@0x/subproviders": "7.0.0",
-    "@arkane-network/web3-provider-engine": "16.0.1-e",
-    "@venly/connect": "^1.40.0"
+    "@venly/connect": "^1.40.0",
+    "web3-provider-engine": "^16.0.5"
   },
   "devDependencies": {
     "assert": "^2.0.0",
     "buffer": "^6.0.3",
     "crypto-js": "^4.1.1",
-    "mocha": "^9.2.2",
     "stream-browserify": "^3.0.0",
     "ts-loader": "^9.2.8",
     "typedoc": "^0.22.15",
     "typescript": "^4.6.3",
-    "util": "^0.12.4",
+    "util": "^0.12.5",
     "webpack": "^5.72.0",
     "webpack-cli": "^4.9.2"
   }

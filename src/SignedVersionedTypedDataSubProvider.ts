@@ -1,6 +1,8 @@
-import { JSONRPCRequestPayload }   from 'ethereum-types';
-import { Callback, ErrorCallback } from '@0x/subproviders/lib/src/types';
-import { Subprovider }             from '@0x/subproviders';
+// import { JSONRPCRequestPayload }   from 'ethereum-types';
+// import { Callback, ErrorCallback } from '@0x/subproviders/lib/src/types';
+// import { Subprovider }             from '@0x/subproviders';
+// import { Subprovider, JSONRPCRequest, NextHandler, CompletionHandler } from '@bitski/provider-engine';
+const Subprovider = require('web3-provider-engine/subproviders/subprovider.js');
 import { VenlyWalletSubProvider } from './VenlyWalletSubProvider';
 
 export class SignedVersionedTypedDataSubProvider extends Subprovider {
@@ -21,9 +23,7 @@ export class SignedVersionedTypedDataSubProvider extends Subprovider {
      * @param end Callback to call if subprovider handled the request and wants to pass back the request.
      */
     // tslint:disable-next-line:prefer-function-over-method async-suffix
-    public async handleRequest(payload: JSONRPCRequestPayload,
-                               next: Callback,
-                               end: ErrorCallback): Promise<void> {
+    public async handleRequest(payload: any, next: any, end: any): Promise<void> {
 
         switch (payload.method) {
             case 'eth_signTypedData_v4':
