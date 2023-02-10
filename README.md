@@ -1,6 +1,6 @@
 Venly Web3 Provider<img align="right" src="https://github.com/ArkaneNetwork.png?size=30" />
 ===
-# Introduction
+## Introduction
 
 > The Venly Web3 provider is a smart wrapper around the existing Web3 Ethereum JavaScript API.
 
@@ -9,26 +9,29 @@ Your existing infrastructure is just one code block away from being **Venly Wall
 
 ![Venly Components](https://i.imgur.com/T5sWhZa.png)
 
-# Documentation
+## Documentation
 The full documentation of the Venly Web3 Provider can be found here: https://docs.venly.io/widget/web3-provider/getting-started
 
-# Getting Started
+## Installation
 
-## Adding the library
+### NPM
 ```bash
 npm i @venly/web3-provider
 ```
 
-Add the following script to the head of your page:
-
-```html
-<script src="/node_modules/@venly/web3-provider/dist/web3-provider.js"></script>
-```
 or import it inside the application main client module
 
 ```javascript
 import "@venly/web3-provider";
 ```
+
+### Browser
+Add the following script to the head of your page:
+
+```html
+<script src="/node_modules/@venly/web3-provider/dist/web3-provider.js"></script>
+```
+
 
 ## Typing
 
