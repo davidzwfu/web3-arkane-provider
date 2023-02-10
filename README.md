@@ -18,16 +18,18 @@ The full documentation of the Venly Web3 Provider can be found here: https://doc
 ```bash
 npm i @venly/web3-provider
 ```
-```javascript
-import "@venly/web3-provider";
-```
 
+Import the module in your project
+
+```javascript
+import { VenlySubProvider } from "@venly/web3-provider";
+```
 ### Browser
+Alternatively, you can load the script from a CDN
 
 ```html
-<script src="/node_modules/@venly/web3-provider/dist/web3-provider.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@venly/web3-provider/umd/index.js"></script>
 ```
-
 
 ## Typing
 
