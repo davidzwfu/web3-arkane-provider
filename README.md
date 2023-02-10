@@ -18,15 +18,11 @@ The full documentation of the Venly Web3 Provider can be found here: https://doc
 ```bash
 npm i @venly/web3-provider
 ```
-
-or import it inside the application main client module
-
 ```javascript
 import "@venly/web3-provider";
 ```
 
 ### Browser
-Add the following script to the head of your page:
 
 ```html
 <script src="/node_modules/@venly/web3-provider/dist/web3-provider.js"></script>
