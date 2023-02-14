@@ -68,10 +68,7 @@ If you provide your own implementation of `bearerTokenProvider`, the web3 provid
 ### Usage with ethers.js
 
 ```javascript
-Venly.createProviderEngine(options)
-     .then(provider => {
-         ethers = new ethers.providers.Web3Provider(provider);
-     });
+ethers = new ethers.providers.Web3Provider(provider);
 ```
 
 ### Using Venly Connect natively
