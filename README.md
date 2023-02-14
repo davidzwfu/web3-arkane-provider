@@ -65,6 +65,15 @@ The web3 instance now works as if it was [injected by parity or metamask](https:
 
 If you provide your own implementation of `bearerTokenProvider`, the web3 provider will not attempt to obtain an authentication code, but rather use the one provided by you.
 
+### Usage with ethers.js
+
+```javascript
+Venly.createProviderEngine(options)
+     .then(provider => {
+         ethers = new ethers.providers.Web3Provider(provider);
+     });
+```
+
 ### Using Venly Connect natively
 
 Although we use Venly Connect under the hood, the functionality of the web3 wrapper isn't limited to the web3 API. Linking or fetching profile information is not supported by Web3, but it is in our wrapper.
