@@ -67,6 +67,8 @@ If you provide your own implementation of `bearerTokenProvider`, the web3 provid
 
 ### Usage with ethers.js
 
+The Web3Provider works by wrapping an existing Web3-compatible and exposing it as an ethers.js Provider which can then be used with the rest of the library.
+
 ```javascript
 ethers = new ethers.providers.Web3Provider(provider);
 ```
