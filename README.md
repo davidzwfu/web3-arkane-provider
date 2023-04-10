@@ -15,12 +15,10 @@ The full documentation of the Venly Web3 Provider can be found here: https://doc
 ## Installation
 
 ### NPM
+Install and import the module in your project
 ```bash
 npm i @venly/web3-provider
 ```
-
-Import the module in your project
-
 ```javascript
 import { VenlySubProvider } from "@venly/web3-provider";
 ```
