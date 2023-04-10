@@ -48,12 +48,13 @@ After adding the javascript file to your page, a global *Venly* object is added 
 ### Adding the web3 provider
 
 ```javascript
-const options: VenlySubProviderOptions = {
+const options: VenlyProviderOptions = {
   clientId: 'YOUR_CLIENT_ID',
-  rpcUrl: 'https://kovan.infura.io/v3/YOUR-PROJECT-ID', //optional
   environment: 'staging', //optional, production by default  
-  signMethod: 'POPUP', //optional, REDIRECT by default
-  bearerTokenProvider: () => 'obtained_bearer_token' //optional, default undefined
+  secretType: SecretType.ETHEREUM, //optional, ETHEREUM by default  
+  windowMode: WindowMode.POPUP, //optional, POPUP by default
+  bearerTokenProvider: () => 'obtained_bearer_token', //optional, default undefined
+  skipAuthentication: false
 };
 
 Venly.createProviderEngine(options)
