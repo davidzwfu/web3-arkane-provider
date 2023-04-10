@@ -29,7 +29,9 @@ Alternatively, you can load the script from a CDN
 
 ```html
 <script src="https://unpkg.com/@venly/web3-provider/umd/index.js"></script>
-//or
+```
+or
+```html
 <script src="https://cdn.jsdelivr.net/npm/@venly/web3-provider/umd/index.js"></script>
 ```
 
