@@ -25,7 +25,7 @@ Import the module in your project
 import { VenlySubProvider } from "@venly/web3-provider";
 ```
 ### Browser
-Alternatively, you can load the script from a CDN
+Alternatively, you can load the script from one of the following CDNs
 
 ```html
 <script src="https://unpkg.com/@venly/web3-provider/umd/index.js"></script>
