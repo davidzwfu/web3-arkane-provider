@@ -38,6 +38,7 @@ To have types properly defined while using the library you need to place the cod
 
 ```javascript
 import { VenlySubProvider } from "@venly/web3-provider";
+
 declare const Venly: VenlySubProvider;
 ```
 
