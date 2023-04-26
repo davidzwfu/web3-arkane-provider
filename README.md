@@ -124,7 +124,7 @@ or when importing from a CDN
 
 ### Imports
 
-All types/objects are now imported directly from @venly/connect
+All types/objects are now imported directly from `@venly/connect`
 
 ```javascript
 import { Wallet } from "@venly/connect";
