@@ -107,3 +107,24 @@ The other checks if a user is logged in on page load. If not, it shows the login
 
 # What is Venly Wallet
 Not sure yet what Venly is all about, be sure to check out our website: https://www.venly.io/
+
+## v2 Migration Guide
+
+### Installation (changes only for head scripts)
+
+```javascript
+<script src="/node_modules/@venly/connect/umd/index.js"></script>
+```
+
+or when importing from a CDN
+
+```javascript
+<script src="https://unpkg.com/@venly/connect/umd/index.js"></script>
+```
+
+### Imports
+
+All types/objects are now imported directly from @venly/connect
+
+```javascript
+import { Wallet } from "@venly/connect";
