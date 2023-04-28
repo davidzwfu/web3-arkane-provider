@@ -139,6 +139,6 @@ type VenlyProviderOptions = {
 }
 ```
 
-clientId - A Client ID is required to connect to Venly. See [here](https://docs.venly.io/widget/deep-dive/authentication#client-id) for more information.
+`clientId` - A Client ID is required to connect to Venly. See [here](https://docs.venly.io/widget/deep-dive/authentication#client-id) for more information.
 
-environment - 
+`environment` - 
