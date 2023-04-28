@@ -135,7 +135,7 @@ import { Wallet } from "@venly/connect";
 ```typescript
 type VenlyProviderOptions = {
   clientId: string
-  environment: string
+  environment?: string
 }
 ```
 
