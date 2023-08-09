@@ -1,4 +1,4 @@
-Venly Web3 Provider<img align="right" src="https://github.com/ArkaneNetwork.png?size=30" />
+Venly Web3 Provider
 ===
 # Introduction
 
