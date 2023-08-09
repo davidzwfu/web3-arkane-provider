@@ -153,13 +153,13 @@ type VenlyProviderOptions = {
 
 ## Next Steps
 
-- Set `env.NEXT_PUBLIC_ENVIRONMENT` to either `development` (for testnets) or `production`
+1. Set `env.NEXT_PUBLIC_ENVIRONMENT` to either `development` (for testnets) or `production`
 
-- Set `env.NEXT_PUBLIC_PROJECT_ID` to your WalletConnect Project ID 
+2. Set `env.NEXT_PUBLIC_PROJECT_ID` to your WalletConnect Project ID 
 
-- Replace the `EXAMPLE` functions with your own implementation. Found in the following files:
+3. Replace the `EXAMPLE` functions with your own implementation. Found in the following files:
   - page.js
   - AuthRequest.js
   - SessionRequest.js
 
-- Test your integration by using it alongside the [WalletConnect demo dapp](https://react-app.walletconnect.com)
+4. Test your integration by using it alongside the [WalletConnect demo dapp](https://react-app.walletconnect.com)
