@@ -139,6 +139,12 @@ type VenlyProviderOptions = {
 }
 ```
 
+- asdf
+
+- asdf
+
+- asdf
+
 `clientId` - The Client ID used to connect with Venly. More information can be found [here](https://docs.venly.io/widget/deep-dive/authentication#client-id).
 
 `environment` - The environment to which you want to connect, possible values are 'staging' and 'production'. Defaults to 'production'.
