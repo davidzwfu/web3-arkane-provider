@@ -153,7 +153,7 @@ type VenlyProviderOptions = {
 
 ## Next Steps
 
-- Environment variables
+- Configure environment variables
   - Set `env.NEXT_PUBLIC_ENVIRONMENT` to either `development` (for testnets) or `production`
   - Set `env.NEXT_PUBLIC_PROJECT_ID` to your WalletConnect Project ID 
 
