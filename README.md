@@ -153,7 +153,7 @@ type VenlyProviderOptions = {
 
 - Fill in `env.NEXT_PUBLIC_PROJECT_ID` with your WalletConnect Project ID 
 
-- Replace all the `EXAMPLE` functions with your own implementation
+- Replace all the `EXAMPLE` functions with your own implementation. Located in the following files:
   - page.js
   - AuthRequest.js
   - SessionRequest.js
