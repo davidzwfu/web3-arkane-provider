@@ -139,11 +139,11 @@ type VenlyProviderOptions = {
 }
 ```
 
-- asdf
+- Fill in `env.NEXT_PUBLIC_PROJECT_ID` with your WalletConnect Project ID 
 
-- asdf
+- Replace all the `EXAMPLE` functions with your own implementation
 
-- asdf
+- Test your integration by using it alongside the [WalletConnect demo dapp](https://react-app.walletconnect.com).
 
 `clientId` - The Client ID used to connect with Venly. More information can be found [here](https://docs.venly.io/widget/deep-dive/authentication#client-id).
 
@@ -151,8 +151,6 @@ type VenlyProviderOptions = {
 
 **NOTE**: Production environment handles main networks while Staging handles test networks. Switching between environments is currently not supported but will be added in a future release.
 
-- test
-- test2
-- asdf
-- asdf
-- asdf
+- Fill in `env.NEXT_PUBLIC_PROJECT_ID` with your WalletConnect Project ID 
+- Replace all the `EXAMPLE` functions with your own implementation
+- Test your integration by using it alongside the [WalletConnect demo dapp](https://react-app.walletconnect.com).
