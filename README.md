@@ -151,9 +151,10 @@ type VenlyProviderOptions = {
 
 **NOTE**: Production environment handles main networks while Staging handles test networks. Switching between environments is currently not supported but will be added in a future release.
 
-- Fill in `env.NEXT_PUBLIC_PROJECT_ID` with your WalletConnect Project ID 
+- Set `env.NEXT_PUBLIC_ENVIRONMENT` to either 'development' or 'production'
+- Set `env.NEXT_PUBLIC_PROJECT_ID` to your WalletConnect Project ID 
 
-- Replace all the `EXAMPLE` functions with your own implementation. Located in the following files:
+- Replace the `EXAMPLE` functions with your own implementation. Found in the following files:
   - page.js
   - AuthRequest.js
   - SessionRequest.js
