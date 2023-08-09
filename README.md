@@ -146,5 +146,7 @@ type VenlyProviderOptions = {
 **NOTE**: Production environment handles main networks while Staging handles test networks. Switching between environments is currently not supported but will be added in a future release.
 
 - test
+  
 - test2
+  
 - asdf
