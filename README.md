@@ -1,5 +1,5 @@
 Venly Web3 Provider
-
+===
 # Introduction
 
 > The Venly Web3 provider is a smart wrapper around the existing Web3 Ethereum JavaScript API.
