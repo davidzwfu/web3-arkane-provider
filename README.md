@@ -162,4 +162,4 @@ type VenlyProviderOptions = {
 - Replace the `EXAMPLE` functions with your own implementation. Found in the following files:
 
 - Test your integration by using it alongside the [WalletConnect demo dapp](https://react-app.walletconnect.com)
-- `src/hooks/useWallets.ts`
+- `src/hooks/useWallets.ts` [link](src/index.ts)
